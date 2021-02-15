@@ -1,0 +1,36 @@
+{
+  "name": "driadeldap",
+  "version": "1.0.0",
+  "description": "This project idea is to create a simple interface to manage ldap/samba databases. Allowing you to do operations in varios users or groups with a simple click",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoDinizSilva/DriadeLdap.git"
+  },
+  "author": "Thiago Diniz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThiagoDinizSilva/DriadeLdap/issues"
+  },
+  "homepage": "https://github.com/ThiagoDinizSilva/DriadeLdap#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
+    "ldapjs": "^2.2.3",
+    "mongoose": "^5.11.15",
+    "node-ldap": "^1.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "simple-ssh": "^1.0.0",
+    "ssh2": "^0.8.9",
+    "ssha": "^1.0.1"
+  }
+}
