@@ -75,17 +75,7 @@
     var a = document.getElementById("1").value;
      
     
-    console.log("testing");
-    export function myFunction() {
-        var elements = document.getElementById("1").elements;
-        var obj ={};
-        for(var i = 0 ; i < elements.length ; i++){
-            var item = elements.item(i);
-            obj[item.name] = item.value;
-        }
     
-        document.getElementById("demo").innerHTML = JSON.stringify(obj);
-    }
 
     
 })(jQuery);
