@@ -1,4 +1,3 @@
-
 (function ($) {
     "use strict";
 
@@ -72,10 +71,7 @@
         $(thisAlert).removeClass('alert-validate');
         $(thisAlert).find('.btn-hide-validate').remove();
     }
-    var a = document.getElementById("1").value;
-     
-    
-    
-
-    
+        
 })(jQuery);
+
+

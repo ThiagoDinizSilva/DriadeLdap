@@ -1,0 +1,16 @@
+<script>
+	var  newJsonObj= {};
+    $(document).ready(function(){
+        // Get value on button click and show alert
+        $("#sing_In").click(function(){
+            var formData = $('.input100').serializeArray();
+            
+            for (var i = 0; i < formData.length; i++){
+            newJsonObj[formData[i]['name']] = formData[i]['value'];
+            }
+            //console.log(newJsonObj);
+
+        });
+    });
+
+</script>

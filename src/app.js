@@ -5,6 +5,7 @@ const login = require('./routes/login');
 const register = require('./routes/register');
 
 app.get('/',index.get)
+app.post('/',index.post)
 app.post('/register',register.post)
 app.post('/login',login.post)
 
