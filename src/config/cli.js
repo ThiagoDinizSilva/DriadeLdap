@@ -1,6 +1,6 @@
 const shell = require('../config/server')
 var cli = 'echo a'
-exports.use= use;
+exports.use = use;
 
 function use(cli){
 
