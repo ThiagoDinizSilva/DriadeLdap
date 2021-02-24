@@ -134,7 +134,7 @@ iframe {
   font-family: SourceSansPro-Regular;
   font-size: 16px;
   line-height: 1.4;
-  color: #4b2354;
+  color: #235154;
 }
 
 .hov1:hover {
@@ -175,10 +175,10 @@ iframe {
   top: 0;
   left: 0;
   background: rgba(93,84,240,0.5);
-  background: -webkit-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: -o-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: -moz-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
+  background: -webkit-linear-gradient(left, rgba(116, 143, 52, 0.164), rgba(86, 180, 211, 0.411));
+  background: -o-linear-gradient(left, rgba(116, 143, 52, 0.164), rgba(86, 180, 211, 0.411));
+  background: -moz-linear-gradient(left, rgba(116, 143, 52, 0.164), rgba(86, 180, 211, 0.411));
+  background: linear-gradient(left, rgba(116, 143, 52, 0.164), rgba(86, 180, 211, 0.411));
   pointer-events: none;
 }
 
@@ -207,7 +207,7 @@ iframe {
   display: block;
   font-family: SourceSansPro-Bold;
   font-size: 30px;
-  color: #4b2354;
+  color: #0c6b8388;
   line-height: 1.2;
   text-align: center;
 }
@@ -218,14 +218,14 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.692);
   border-radius: 20px;
 }
 
 .input100 {
   font-family: SourceSansPro-Bold;
   font-size: 16px;
-  color: #4b2354;
+  color: #000000;
   line-height: 1.2;
 
   display: block;
@@ -292,12 +292,12 @@ iframe {
   padding: 0 20px;
   min-width: 160px;
   height: 50px;
-  background-color: #bd59d4;
+  background-color: #ffffffce;
   border-radius: 25px;
 
   font-family: SourceSansPro-SemiBold;
   font-size: 14px;
-  color: #fff;
+  color: rgba(26, 121, 150, 0.5);
   line-height: 1.2;
   text-transform: uppercase;
 
@@ -306,20 +306,20 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
-  -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
-  -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
-  -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
-  -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.200);
+  -moz-box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.200);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.200);
+  -o-box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.200);
+  -ms-box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.200);
 }
 
 .login100-form-btn:hover {
-  background-color: #4b2354;
-  box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
-  -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
-  -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
-  -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
-  -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  background-color: #c6fcfc;
+  box-shadow: 0 10px 30px 0px rgba(81, 231, 236, 0.534);
+  -moz-box-shadow: 0 10px 30px 0px rgba(81, 231, 236, 0.534);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(81, 231, 236, 0.534);
+  -o-box-shadow: 0 10px 30px 0px rgba(81, 231, 236, 0.534);
+  -ms-box-shadow: 0 10px 30px 0px rgba(81, 231, 236, 0.534);
 }
 
 
