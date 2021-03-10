@@ -11,7 +11,7 @@ const schema = {
   },
   'SURNAME': {
     prop: 'surname',
-    type: Number,
+    type: String,
     required: true
   },
   'TITLE': {
@@ -30,23 +30,25 @@ const schema = {
 }
 
 readXlsxFile(file, { schema }).then(({ rows, errors }) => {
-  let test = ['name','title','warName','idt']
+  
+  //create and fill array with each schema prop
+  let schemaProps = []
+    for (var key in schema) {
+      var value = schema[key]
+      schemaProps.push(value.prop);
+    }
+  //counter to access every element
   i=0
   rows.forEach(element => {
-    if(test.every(prop => element.hasOwnProperty(prop))){
-    //if(element.hasOwnProperty('title')){
-      console.log('have title')
+    if(schemaProps.every(prop => element.hasOwnProperty(prop))){
       i++
     } else{
-      console.log('does not have title')
-      rows.splice(i,1)
-      console.log(i)
+      //rows.splice(i,1)
     }
-    
-  });
-  errors.length === 0
-  
-  console.log(rows)
-})
 
+    console.log(errors)
+
+  })
+
+})
 } module.exports = teste

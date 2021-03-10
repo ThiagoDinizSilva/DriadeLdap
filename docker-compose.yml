@@ -19,7 +19,7 @@ services:
     networks:
       - app-network
 
-  ldap-samba:
+  ldap-server:
     container_name: ldap-server
     hostname: ldap-server
     image: dinkel/openldap
@@ -28,7 +28,7 @@ services:
       - 389:389
     environment:
       - SLAPD_PASSWORD=s3cr3t
-      - SLAPD_DOMAIN=ldap.server.example
+      - SLAPD_DOMAIN=ldap.server.example   
       - SLAPD_ORGANIZATION=LDAP - server
       - SLAPD_ADDITIONAL_MODULES=memberof
       - SLAPD_ADDITIONAL_SCHEMAS=collective,corba,duaconf,dyngroup,java,misc,openldap,pmi,ppolicy
