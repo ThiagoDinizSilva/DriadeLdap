@@ -46,7 +46,7 @@ readXlsxFile(file, { schema }).then(({ rows, errors }) => {
       //rows.splice(i,1)
     }
 
-    console.log(errors)
+    return(errors)
 
   })
 

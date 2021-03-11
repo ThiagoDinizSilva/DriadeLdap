@@ -4,7 +4,7 @@ services:
   nodejs:
     container_name: nodejs
     hostname: nodejs
-    image: nodejs
+    image: thiago/nodejs
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -15,7 +15,7 @@ services:
       - MONGO_PORT=27017
       - MONGO_DB=driade
     volumes:
-      - .:/home
+      - .:/home/DriadeLdap
     networks:
       - app-network
 

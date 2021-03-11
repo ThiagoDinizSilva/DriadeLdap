@@ -1,0 +1,33 @@
+---Core---
+
+- [] Fill Todo with what i wrote in paper
+- [] Save parseExelFile in mongodb
+- [] Errors treatment
+- [] Frontend
+    - [] Dashboard
+    - [] login
+    - [] config
+        - [] Control Panel
+        - [] Server
+        - [] Client
+    - [] add user
+    - [] add group
+    - [] log
+    - [] Search
+- [] Generate Exel Template to be filled and uploaded
+
+---Ideas---
+
+- [] sync local mongodb with other databases
+- [] create a local ldap server to be used by other applications
+- [] create a interface that will help alter the ldap schema
+
+---Not that Important but will do(maybe)---
+
+- [] make a RPM package to install everything needed to run this project
+
+---Other Stuff---
+~~ nothing to put here yet ~~
+- [] 
+- []
+

@@ -12,3 +12,10 @@ Use located in src/config/cli.js
 
 placed some comments down the code as it started to grow bigger, rebased everything to get things more organized, next step is to model
 a DB and use it to get things work. Got some experience ussing passport npm, I'll try improve it somehow
+
+---Version v0.5.6---
+
+containers running, now i can work from anywhere! (yay) parseExelFile now will check if file matches the requirements and will push errors 
+and rows in 2 arrays, the first one will be displayed to the user so that it can be corrected and resent. The Second One Will be accepted
+and pushed to mongodb. at the same time a message will appears saying "X entries accepted, X errors," and errors will be displayed to user
+I'll try use react to front-end, lets see how it does

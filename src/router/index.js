@@ -2,7 +2,7 @@ const router = require('express').Router()
 const uploadFile = require('../services/uploadFile');
          
    router.get('/login',(req, res, next) => {
-    res.sendFile('index.html',{ root: '../src/views/login/' });
+    res.sendFile('index.html',{ root: './src/views/login/' });
    })
 
    router.get('/dashboard',(req, res, next) => {
