@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+  ldap-server:
+    container_name: ldap-server
+    hostname: ldap-server
+    image: dinkel/openldap
+    restart: unless-stopped
+    ports:
+      - 389:389
+    environment:
+      - SLAPD_PASSWORD=s3cr3t
+      - SLAPD_DOMAIN=ldap.server.example   
+      - SLAPD_ORGANIZATION=LDAP - server
+      - SLAPD_ADDITIONAL_MODULES=memberof
+      - SLAPD_ADDITIONAL_SCHEMAS=collective,corba,duaconf,dyngroup,java,misc,openldap,pmi,ppolicy
+    volumes:
+      - ./ldap-samba/config:/etc/ldap
+      - ./ldap-samba/database:/var/lib/ldap
+      - ./ldap-samba/ldif-files:/etc/ldap.dist/prepopulate
+    networks:
+      - app-network
+
+  php-openldap-admin:
+    container_name: php-openldap-admin
+    hostname: php-openldap-admin
+    image: osixia/phpldapadmin:0.6.12
+    restart: unless-stopped
+    ports:
+      - 6443:443
+    environment:
+      - PHPLDAPADMIN_LDAP_HOSTS=ldap-server
+    depends_on:
+      - ldap-server
+    links:
+      - ldap-server:ldap-server
+    networks:
+      - app-network
+
+  mongodb:
+    container_name: mongodb
+    hostname: mongodb
+    image: mongo:4.1.8-xenial    
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=nodejs
+      - MONGO_INITDB_ROOT_PASSWORD=nodejs
+    volumes:
+      - ./mongodb/data/db:/data/db
+      - ./mongodb/data/configdb:/data/configdb
+
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
