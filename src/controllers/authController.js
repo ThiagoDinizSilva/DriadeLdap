@@ -5,7 +5,7 @@ const signup = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    let user = await User.findOne({ email });
+    let user = await User.findOne({ name });
 
     if (!user) {
       let newUser = new User({ name, email, password });
@@ -17,7 +17,7 @@ const signup = async (req, res) => {
 
     return res
       .status(422)
-      .json({ errors: ["this email is already registered "] });
+      .json({ errors: ["this name is already registered "] });
   } catch (e) {
     console.error(e);
     return res.status(500).json({ errors: ["some error occured"] });
@@ -25,10 +25,10 @@ const signup = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  const { email, password } = req.body;
+  const { name, password } = req.body;
 
   try {
-    let user = await User.findOne({ email });
+    let user = await User.findOne({ name });
 
     if (!user) return res.status(422).json({ errors: ["no such user exists"] });
 

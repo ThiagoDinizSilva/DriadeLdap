@@ -39,13 +39,11 @@ router.post(
   },
   signup
 );
-
+ 
 // /auth/login
 router.post(
   "/login",
   [
-    check("email").isEmail().withMessage("invalid message").normalizeEmail(),
-
     check("password")
       .isLength({ min: 3})
       .withMessage("invalid password"),

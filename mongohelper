@@ -1,0 +1,13 @@
+mongo --username admin --password password
+
+use driade
+db.createUser(
+  {
+    user: "driade",
+    pwd: "driade",
+    roles: [
+      
+       { role: "dbOwner", db: "driade" }
+    ]
+  }
+)
