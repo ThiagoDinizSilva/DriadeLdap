@@ -16,11 +16,10 @@ const signup = async (req, res) => {
     }
 
     return res
-      .status(422)
-      .json({ errors: ["this name is already registered "] });
+      .status(400)
+      .json({ error: ["Username already registered "] });
   } catch (e) {
-    console.error(e);
-    return res.status(500).json({ errors: ["some error occured"] });
+    return res.status(500).json({ error: ["some error occured"] });
   }
 };
 
@@ -30,45 +29,24 @@ const login = async (req, res) => {
   try {
     let user = await User.findOne({ name });
 
-    if (!user) return res.status(422).json({ errors: ["no such user exists"] });
+    if (!user) return res.send("Invalid Username or Password");
 
     if (await user.comparePassword(password)) {
       const token = jwt.sign({ id: user._id }, process.env.SECRET, {
-        expiresIn: "24h",
+        expiresIn: "20m",
       });
-
       return res.status(200).json({ msg: "user logged in", token });
+    } else{ 
+      return res.send("Invalid Username or Password");
     }
-
-    return res.status(403).json({ errors: ["invalid password"] });
   } catch (e) {
-    console.error(e);
-    res.staus(500).json({ errors: ["some error occured"] });
+    res.send("Something went wrong, contact the Administrator! Code: SCAUTH-44");
   }
 };
 
-const me = async (req, res) => {
-  let token = req.header("X-Auth");
-
-  try {
-    if (!token)
-      return res.status(403).json({ errors: ["unauthorized access"] });
-
-    let decoded = jwt.verify(token, process.env.SECRET);
-
-    let user = await User.findById(decoded.id, "name email");
-
-    if (!user) return res.status(403).json({ errors: ["unauthorized"] });
-
-    return res.status(200).json({ user });
-  } catch (e) {
-    console.error(e);
-    return res.status(500).json({ errors: ["some error occured"] });
-  }
-}; 
 
 module.exports = {
   login,
   signup,
-  me,
+
 };

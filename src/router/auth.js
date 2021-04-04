@@ -11,13 +11,8 @@ router.post(
   [
     check("name")
       .isLength({ min: 3 })
-      .withMessage("the name must have minimum length of 3")
+      .withMessage("Login must have minimum length of 3")
       .trim(),
-
-    check("email")
-      .isEmail()
-      .withMessage("invalid email address")
-      .normalizeEmail(),
 
     check("password")
       .isLength({ min: 3})
@@ -33,7 +28,7 @@ router.post(
   (req, res, next) => {
     const error = validationResult(req).formatWith(({ msg }) => msg);
 
-    if (!error.isEmpty()) return res.status(422).json({ error: error.array() });
+    if (!error.isEmpty()) return res.status(422).send({ error: error.array() });
 
     next();
   },
@@ -43,23 +38,15 @@ router.post(
 // /auth/login
 router.post(
   "/login",
-  [
-    check("password")
-      .isLength({ min: 3})
-      .withMessage("invalid password"),
-  ],
   (req, res, next) => {
     let error = validationResult(req).formatWith(({ msg }) => msg);
 
     if (!error.isEmpty())
-      return res.status(422).json({ errors: error.array() });
-
+      return res.send({ error: error.array() });
+      
     next();
   },
   login
 );
-
-// /auth/me
-router.get("/me", me);
 
 module.exports = router;

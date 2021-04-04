@@ -1,11 +1,11 @@
 ---Core---
 
-- [] Fill Todo with what i wrote in paper
+- [X] Fill Todo with what i wrote in paper
 - [] Save parseExelFile in mongodb
 - [] Errors treatment
 - [] Frontend
     - [] Dashboard
-    - [] login
+    - [X] login
     - [] config
         - [] Control Panel
         - [] Server
